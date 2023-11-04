@@ -69,7 +69,7 @@ export default class Gameboard {
       // Record a miss and add the attack coordinates to the missedAttacks array.
       this.grid[y][x] = 'miss';
       this.missedAttacks.push({ x, y });
-    } else {
+    } else if (this.grid[y][x] !== 'miss' && this.grid[y][x] !== 'hit') {
       // If a ship occupies the cell, record a hit.
       const ship = this.grid[y][x];
       ship.hit(1);
