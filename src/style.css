@@ -1,0 +1,50 @@
+/* Styling for the game container */
+.game-container {
+  display: flex;
+  justify-content: space-between;
+  width: 800px;
+  margin: 0 auto;
+}
+
+/* Styling for each player's board */
+.player-board {
+  flex: 1;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Styling for the board itself */
+.board {
+  display: grid;
+  grid-template-columns: repeat(10, 40px);
+  grid-template-rows: repeat(10, 40px);
+  gap: 2px;
+}
+
+/* Styling for individual cells */
+.cell {
+  width: 40px;
+  height: 40px;
+  background-color: #ffffff;
+  border: 1px solid #999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* Styling for missed attack cells */
+.cell.miss {
+  background-color: #a3ddff;
+}
+
+/* Styling for hit cells */
+.cell.hit {
+  background-color: #ff0000;
+}
+
+/* Styling for cells with ships */
+.cell.ship {
+  background-color: #35424a;
+}

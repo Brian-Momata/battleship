@@ -4,9 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Battleship</title>
-  <script src="bundle.js"></script>
+  <script src="bundle.js" defer></script>
 </head>
 <body>
-  
+  <div class="game-container">
+    <div class="player-board">
+      <h2>Player 1</h2>
+      <div class="board" id="player1-board"></div>
+      <!-- Will be populated with the game board using JS -->
+    </div>
+    <div class="player-board">
+      <h2>Player 2</h2>
+      <div class="board" id="player2-board"></div>
+      <!-- Will be populated with the game board using JS -->
+    </div>
+  </div>
 </body>
 </html>
