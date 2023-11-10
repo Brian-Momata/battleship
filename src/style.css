@@ -48,3 +48,31 @@
 .cell.ship {
   background-color: #35424a;
 }
+
+/* Styling for the instruction heading */
+.instruction-heading {
+  text-align: center;
+  color: #35424a;
+  margin-bottom: 10px;
+}
+
+/* Styling for the draggable ships container */
+.ships-container {
+  border: 2px dashed #35424a;
+  max-width: 400px;
+  padding: 10px;
+  margin: 0 auto;
+}
+
+/* Styling for individual draggable ships */
+.draggable-ship {
+  margin: 5px;
+  padding: 10px;
+  background-color: #35424a;
+  color: #fff;
+  cursor: move;
+}
+
+.draggable-ship.vertical {
+  background-color: #a9710a;
+}
