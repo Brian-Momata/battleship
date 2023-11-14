@@ -3,11 +3,11 @@ import Ship from "./ship";
 export default function populateShipsContainer() {
   const shipsContainer = document.querySelector('.ships-container');
   const ships = {
-    "Carrier": new Ship(5),
-    "Battleship": new Ship(4),
-    "Cruiser": new Ship(3),
-    "Submarine": new Ship(3),
-    "Destroyer": new Ship(2)
+    "Carrier": new Ship(5, "Carrier"),
+    "Battleship": new Ship(4, "Battleship"),
+    "Cruiser": new Ship(3, "Cruiser"),
+    "Submarine": new Ship(3, "Submarine"),
+    "Destroyer": new Ship(2, "Destroyer"),
   };
 
   for (const shipName in ships) {
