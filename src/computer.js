@@ -17,4 +17,25 @@ export default class Computer {
     enemyBoard.receiveAttack(y, x);
     return [y, x];
   }
+
+  populateBoard(board, shipsObj) {
+    for(let shipName in shipsObj) {
+      let placed = false;
+      let ship = shipsObj[shipName];
+
+      while(!placed) {
+        const y = Math.floor(Math.random() * board.grid.length);
+        const x = Math.floor(Math.random() * board.grid[0].length);
+        const orientation = Math.random() < 0.5? 'horizontal' : 'vertical';
+
+        try {
+          board.placeShip(ship, y, x, orientation);
+          placed = true; // Ship is placed successfully
+        } catch (error) {
+          // if placing fails
+          placed = false;
+        }
+      }
+    }
+  }
 }
