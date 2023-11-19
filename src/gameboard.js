@@ -54,8 +54,13 @@ export default class Gameboard {
 
     // Check if all specified coordinates are empty before placing the ship.
     if (coordinatesToCheck.every(([cy, cx]) => this.emptyCellGrid(cy, cx))) {
+      // Create a new Ship instance from the ship parameter
+      // I was having trouble with both board sharing the same Ship instance
+      const newShip = new Ship(ship.length, ship.name);
+
+      // Place the new ship on this board's grid
       coordinatesToCheck.forEach(([cy, cx]) => {
-        this.grid[cy][cx] = ship;
+        this.grid[cy][cx] = newShip;
       });
     } else {
       throw new Error('There is already a ship at the specified coordinates');
@@ -73,7 +78,12 @@ export default class Gameboard {
       // If a ship occupies the cell, record a hit.
       const ship = this.grid[y][x];
       ship.hit(1);
+      console.log(`hit ${ship.name}: ${ship.length}`);
+      console.log(`hits taken: ${ship.hitsTaken}`);
       this.grid[y][x] = 'hit';
+      if (ship.isSunk()) {
+        // console.log(`${ship.name}: ${ship.length} has been sunk!: hits taken ${ship.hitsTaken}`);
+      }
     }
   }
 
