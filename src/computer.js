@@ -1,6 +1,6 @@
 export default class Computer {
   constructor() {
-    this.name = 'Computer';
+    this.name = 'player2';
     this.attackedCoordinates = [];
   }
 
