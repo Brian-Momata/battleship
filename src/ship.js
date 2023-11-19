@@ -1,7 +1,7 @@
 export default class Ship {
-  constructor(length, name, hitsTaken = 0) {
+  constructor(length, name) {
     this.length = length;
-    this.hitsTaken = hitsTaken;
+    this.hitsTaken = 0;
     this.orientation = 'horizontal';
     this.name = name;
   }
