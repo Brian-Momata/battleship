@@ -76,3 +76,13 @@
 .draggable-ship.vertical {
   background-color: #a9710a;
 }
+
+/* Styling for the message box*/
+.message-box {
+  background-color: #fff;
+  color: #35424a;
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+  font-size: 1.2rem;
+}

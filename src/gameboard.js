@@ -7,6 +7,8 @@ export default class Gameboard {
 
     // Initialize an array to track missed attacks.
     this.missedAttacks = [];
+
+    this.player = null;
   }
   
   // Create a 2D grid with the specified number of rows and columns, initialized with a given value.
@@ -73,16 +75,16 @@ export default class Gameboard {
     if (this.grid[y][x] === null) {
       // Record a miss and add the attack coordinates to the missedAttacks array.
       this.grid[y][x] = 'miss';
+      this.displayMessage('You missed!');
       this.missedAttacks.push({ x, y });
     } else if (this.grid[y][x] !== 'miss' && this.grid[y][x] !== 'hit') {
       // If a ship occupies the cell, record a hit.
       const ship = this.grid[y][x];
       ship.hit(1);
-      console.log(`hit ${ship.name}: ${ship.length}`);
-      console.log(`hits taken: ${ship.hitsTaken}`);
+      this.displayMessage(`${ship.name} has taken a hit`);
       this.grid[y][x] = 'hit';
       if (ship.isSunk()) {
-        // console.log(`${ship.name}: ${ship.length} has been sunk!: hits taken ${ship.hitsTaken}`);
+        this.displayMessage(`${ship.name} has been sunk!`);
       }
     }
   }
@@ -99,5 +101,12 @@ export default class Gameboard {
     
     // Check if every ship in the array is sunk, returning true for all ships sunk.
     return allShips.every(ship => ship.isSunk());
+  }
+  
+  displayMessage(message) {
+    const messageBox = document.querySelector(`#${this.player.name}-message-box`);
+    if (messageBox) {
+      messageBox.textContent = message;
+    }
   }
 }
