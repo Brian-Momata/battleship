@@ -40,7 +40,7 @@
 }
 
 /* Styling for hit cells */
-.cell.hit {
+.cell.ship.hit {
   background-color: #ff0000;
 }
 
